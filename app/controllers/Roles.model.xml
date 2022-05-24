@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Roles" alias="Roles" created="2022-05-13T11:27:37" modified="2022-05-13T11:27:44" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="RoleId" fieldName="RoleID" label="Role Id" />
+    <column name="RoleName" fieldName="RoleName" label="Role Name" sortOrder="1" sortType="Ascending" />
+  </columns>
+</dataModel>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Location" alias="Location" created="2022-05-13T11:27:14" modified="2022-05-13T12:06:18" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="LocationId" fieldName="LocationID" label="Location Id" />
+    <column name="Name" fieldName="Name" label="Name" sortOrder="1" sortType="Ascending" />
+    <column name="City" fieldName="City" label="City" />
+    <column name="State" fieldName="State" label="State" />
+    <column name="Country" fieldName="Country" label="Country" />
+    <column name="CreatedBy" fieldName="CreatedBy" label="Created By" />
+    <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
+    <column name="ModifiedOn" fieldName="ModifiedOn" label="Modified On" format="g" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" format="g" />
+  </columns>
+</dataModel>

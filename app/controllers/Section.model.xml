@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Section" alias="Section" created="2022-05-13T11:27:19" modified="2022-05-13T11:27:21" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="SectionId" fieldName="SectionID" label="Section Id" />
+    <column name="Section" fieldName="Section" label="Section" sortOrder="1" sortType="Ascending" />
+  </columns>
+</dataModel>

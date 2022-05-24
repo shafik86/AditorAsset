@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode title="^SiteHome^Home^SiteHome^" description="" url="~/index.html">
+    <siteMapNode title="^HomePath^Home^HomePath^" description="^HomeDesc^Application home page^HomeDesc^" url="~/pages/home" cssClass="Wide" />
+    <siteMapNode title="Auditor" description="View Auditor" url="~/pages/auditor" roles="Auditor" cssClass="material-icon-person" />
+    <siteMapNode title="Auditor Admin" description="" url="~/pages/auditor-admin" roles="Administrators, Users" />
+    <siteMapNode title="Defect Description" description="View Defect Description" url="~/pages/defect-description" roles="Administrators, Users" cssClass="material-icon-insert_invitation" />
+    <siteMapNode title="Project" description="View Project" url="~/pages/project" />
+    <siteMapNode title="Admin" description="" roles="Administrators, Users">
+      <siteMapNode title="Categories" description="View Categories" url="~/pages/categories" roles="Administrators, Users" />
+      <siteMapNode title="Location" description="View Location" url="~/pages/location" roles="Administrators, Users" />
+      <siteMapNode title="Image" description="View Image" url="~/pages/image" roles="Administrators, Users" />
+    </siteMapNode>
+    <siteMapNode title="Settings" description="" roles="Administrators, Users">
+      <siteMapNode title="User Roles" description="View User Roles" url="~/pages/user-roles" roles="Administrators, Users" />
+      <siteMapNode title="Users" description="View Users" url="~/pages/users" roles="Administrators, Users" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

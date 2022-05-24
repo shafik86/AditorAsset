@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Level" alias="Level" created="2022-05-13T12:00:48" modified="2022-05-13T12:00:49" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="levelId" fieldName="LevelID" label="level Id" />
+    <column name="Level" fieldName="Level" label="Level" />
+  </columns>
+</dataModel>

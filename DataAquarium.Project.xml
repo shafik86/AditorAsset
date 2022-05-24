@@ -1,0 +1,61 @@
+<!-- 
+  This file is provided to store the settings for your Data Aquarium project. 
+  You can safely delete this file if no further code generation is planned.
+-->
+<project compatibility="20111118" dataModel="required" appFolder="app" displayName="AditorAsset" group="" type="Web Site Factory" sourceControl="git" subscriptionLevel="Unlimited" name="AditorAsset" prettyName="Aditor Asset" appGenVersion="8.9.23.0" codeDomProvider="CSharp" targetFramework="4.8" userInterface="TouchUI" pageImplementation="html" databaseChanged="true" xmlns="urn:schemas-codeontime-com:data-aquarium-project">
+  <connectionString hostDatabaseSharing="false" sessionStateMode="None">Data Source=.\sqlexpress;Initial Catalog=AuditSystem;Integrated Security=True;</connectionString>
+  <providerName>System.Data.SqlClient</providerName>
+  <namespace>MyCompany</namespace>
+  <webServer run="true" port="47694" preview="Browser" client="">
+    <webConfig></webConfig>
+  </webServer>
+  <features useSaveAndNew="true" pageHeader="" copyright="" annotations="false" annotationsPath="" newColumn="true" floating="false" maxGridFields="100" multiSelect="false" batchEdit="false" advancedSearch="false" advancedLookup="false" relationshipExplorer="false" enablePermalinks="false" enableHistory="false" enableTransactions="false" showModalForms="true" tabViewSelection="8">
+    <navigation detectUnderscoreSeparatedSchema="" />
+    <blob allowUploadOnInsert="true" />
+    <framework scriptOnly="true" useExtenders="false" />
+    <grid actionColumn="false" />
+    <touch desktopDisplayDensity="Condensed" mobileDisplayDensity="Auto" transitions="" sidebar="Landscape" labelsInList="DisplayedBelow" initialListMode="SeeAll" menu="toolbar" promoteActions="true" smartDates="true" mapApiIdentifier="" mapApiIdentifierMobile="" />
+    <cms searchEngine="" analysisEngine="" analysisOnDataPages="false" />
+    <ease urlHashing="false">
+      <auditing>Modified By User Name = ModifiedBy
+
+Modified On Date          = ModifiedOn
+Created By User Name  = CreatedBy
+
+Created On Date           = CreatedOn</auditing>
+    </ease>
+    <packageProperties></packageProperties>
+    <smtp deliveryMethod="Network" deliveryFormat="" from="" clientDomain="" targetName="" host="" port="" defaultCredentials="true" enableSsl="false" username="" password="" />
+    <addons OfflineSync="" ContentMaker="" />
+  </features>
+  <reports enabled="true" version="15" />
+  <host path="" url="" />
+  <databaseObjectFilter generate="ControllersAndPages"></databaseObjectFilter>
+  <bll normalizeModelNames="true" discoveryDepth="3" labelFormatExpression="" selectMethod="Select" selectSingleMethod="SelectSingle" insertMethod="Insert" updateMethod="Update" deleteMethod="Delete" generateSharedBusinessRules="true" includeViews="true" tabViewSelection="0">
+    <fieldMap></fieldMap>
+    <keys></keys>
+    <fieldsToIgnore></fieldsToIgnore>
+    <fieldsToHide></fieldsToHide>
+    <customLabels></customLabels>
+  </bll>
+  <membership enabled="false" providerName="System.Data.SqlClient" connectionString="" windowsAuthentication="false" activeDirectory="false" customSecurity="true" dedicatedLogin="true" displayRememberMe="true" rememberMeSet="false" displaySignUp="false" displayPasswordRecovery="false" displayMyAccount="true" displayHelp="true" idleUserDetectionTimeout="-1" tabViewSelection="0" validationKey="AC1FA43018AF0293C92F5BFE05AD9CECB69A534EE1BE978815BBCC8BFC2D556C06C2BC659864CFD7EC140D692EF5E0B845CA7FFFF24EBD3E88E8083ADA93C9D7">
+    <adConfig></adConfig>
+    <config>table Users = Users
+column [int|uiid] UserID = UserID
+column [text] UserName = UserName
+column [text] Password = Password
+column [text] Email = Email
+
+table Roles = Roles
+column [int|uiid] RoleID = RoleID
+column [text] RoleName = RoleName
+
+table UserRoles = UserRoles
+column [int|uiid] UserID = UserID
+column [int|uiid] RoleID = RoleID
+</config>
+  </membership>
+  <globalization uiCulture="en-US" culture="en-MY" enableClientBasedCulture="false" supportedCultures="en-MY,en-US; " googleTranslateApiKey="" />
+  <layout name="Classic" menuStyle="MultiLevel" />
+  <theme name="Convention" />
+</project>

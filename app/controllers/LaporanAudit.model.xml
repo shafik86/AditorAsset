@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="DefectDescription" alias="DefectDescription" created="2022-05-23T17:17:40" modified="2022-05-24T16:18:34" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys>
+    <foreignKey id="Category" parentTableSchema="dbo" parentTableName="Categories" x="348" y="20">
+      <foreignKeyColumn columnName="CategoryId" parentColumnName="CategoryId" />
+    </foreignKey>
+    <foreignKey id="Section" parentTableSchema="dbo" parentTableName="Section" x="348" y="160">
+      <foreignKeyColumn columnName="SectionId" parentColumnName="SectionId" />
+    </foreignKey>
+    <foreignKey id="Building" parentTableSchema="dbo" parentTableName="Building" x="348" y="300">
+      <foreignKeyColumn columnName="BuildingId" parentColumnName="BuildingId" />
+    </foreignKey>
+    <foreignKey id="Location" parentTableSchema="dbo" parentTableName="Location" x="348" y="440">
+      <foreignKeyColumn columnName="LocationId" parentColumnName="LocationId" />
+    </foreignKey>
+    <foreignKey id="Auditor" parentTableSchema="dbo" parentTableName="Auditor" x="357" y="566">
+      <foreignKeyColumn columnName="AuditorId" parentColumnName="AuditorId" />
+    </foreignKey>
+    <foreignKey id="Level" parentTableSchema="dbo" parentTableName="Level" x="348" y="762">
+      <foreignKeyColumn columnName="LevelId" parentColumnName="levelId" />
+    </foreignKey>
+    <foreignKey id="Project" parentTableSchema="dbo" parentTableName="Project" x="639" y="104">
+      <foreignKeyColumn columnName="ProjectId" parentColumnName="ProjectId" />
+    </foreignKey>
+  </foreignKeys>
+  <columns>
+    <column name="DefectDescriptionID" fieldName="DefectDescriptionID" label="Defect Description ID" />
+    <column name="CategoryId" fieldName="CategoryID" label="Category Id" aliasColumnName="Category" aliasForeignKey="Category" />
+    <column name="Category" fieldName="Category" label="Category" foreignKey="Category" />
+    <column name="PrefixNumber" fieldName="CategoryPrefixNumber" label="Category Prefix Number" foreignKey="Category" />
+    <column name="Description" fieldName="Description" label="Description" />
+    <column name="RootCause" fieldName="RootCause" label="Root Cause" />
+    <column name="CostTarget" fieldName="CostTarget" label="Cost Target" format="c" />
+    <column name="DurationType" fieldName="DurationType" label="Duration Type" />
+    <column name="SectionId" fieldName="SectionID" label="Section Id" aliasColumnName="Section" aliasForeignKey="Section" />
+    <column name="Section" fieldName="Section" label="Section" foreignKey="Section" />
+    <column name="BuildingId" fieldName="BuildingID" label="Building Id" aliasColumnName="Building" aliasForeignKey="Building" />
+    <column name="Building" fieldName="Building" label="Building" foreignKey="Building" />
+    <column name="LocationId" fieldName="LocationID" label="Location Id" aliasColumnName="City" aliasForeignKey="Location" />
+    <column name="City" fieldName="LocationCity" label="Location City" foreignKey="Location" />
+    <column name="Name" fieldName="LocationName" label="Location Name" foreignKey="Location" />
+    <column name="State" fieldName="LocationState" label="Location State" foreignKey="Location" />
+    <column name="AuditorId" fieldName="AuditorID" label="Auditor Id" aliasColumnName="Name" aliasForeignKey="Auditor" />
+    <column name="Name" fieldName="AuditorName" label="Auditor Name" foreignKey="Auditor" />
+    <column name="Email" fieldName="AuditorEmail" label="Auditor Email" foreignKey="Auditor" />
+    <column name="LevelId" fieldName="LevelID" label="Level Id" aliasColumnName="Level" aliasForeignKey="Level" />
+    <column name="Level" fieldName="Level" label="Level" foreignKey="Level" />
+    <column name="DefectLv" fieldName="DefectLv" label="Defect Lv" />
+    <column name="Status" fieldName="Status" label="Status" />
+    <column name="Createdby" fieldName="Createdby" label="Createdby" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" format="g" />
+    <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
+    <column name="ModifiedOn" fieldName="ModifiedOn" label="Modified On" format="g" />
+    <column name="image1" fieldName="Image1" label="Image1" />
+    <column name="image2" fieldName="Image2" label="Image2" />
+    <column name="image3" fieldName="Image3" label="Image3" />
+    <column name="ProjectId" fieldName="ProjectId" label="Project Id" aliasColumnName="ProjectName" aliasForeignKey="Project" />
+    <column name="ProjectName" fieldName="ProjectName" label="Project Name" foreignKey="Project" />
+    <column name="PrefixNumber" fieldName="ProjectPrefixNumber" label="Project Prefix Number" foreignKey="Project" />
+    <column name="NoRujukan" fieldName="NoRujukan" label="No Rujukan" />
+    <column name="ProposeCorrection" fieldName="ProposeCorrection" label="Propose Correction" />
+    <column name="ProposePrevention" fieldName="ProposePrevention" label="Propose Prevention" />
+    <column name="DurationTaken" fieldName="DurationTaken" label="Duration Taken" />
+    <column name="MarkahFizikal" fieldName="MarkahFizikal" label="Markah Fizikal" />
+    <column name="MarkahKeutamaan" fieldName="MarkahKeutamaan" label="Markah Keutamaan" />
+    <column name="SkalaKecacatan" fieldName="SkalaKecacatan" label="Skala Kecacatan" />
+    <column name="KeadaanFizikal" fieldName="KeadaanFizikal" label="Keadaan Fizikal" />
+    <column name="NilaiKecacatan" fieldName="NilaiKecacatan" label="Nilai Kecacatan" />
+    <column name="LainKenyataan" fieldName="LainKenyataan" label="Lain Kenyataan" />
+    <column name="image1FileName" fieldName="Image1FileName" label="Image 1 File Name" />
+    <column name="RemarkImage1" fieldName="RemarkImage1" label="Remark Image 1" />
+    <column name="image2FileName" fieldName="Image2FileName" label="Image 2 File Name" />
+    <column name="RemarkImage2" fieldName="RemarkImage2" label="Remark Image 2" />
+    <column name="image3FileName" fieldName="Image3FileName" label="Image 3 File Name" />
+    <column name="RemarkImage3" fieldName="RemarkImage3" label="Remark Image 3" />
+    <column name="image1After" fieldName="Image1After" label="Image 1 After" />
+    <column name="image1FileNameAfter" fieldName="Image1FileNameAfter" label="Image 1 File Name After" />
+    <column name="RemarkImage1After" fieldName="RemarkImage1After" label="Remark Image 1 After" />
+    <column name="image2After" fieldName="Image2After" label="Image 2 After" />
+    <column name="image2FileNameAfter" fieldName="Image2FileNameAfter" label="Image 2 File Name After" />
+    <column name="RemarkImage2After" fieldName="RemarkImage2After" label="Remark Image 2 After" />
+    <column name="image3After" fieldName="Image3After" label="Image 3 After" />
+    <column name="image3FileNameAfter" fieldName="Image3FileNameAfter" label="Image 3 File Name After" />
+    <column name="RemarkImage3After" fieldName="RemarkImage3After" label="Remark Image 3 After" />
+  </columns>
+</dataModel>

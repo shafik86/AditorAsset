@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Project" alias="Project" created="2022-05-24T16:16:47" modified="2022-05-24T16:16:49" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="ProjectId" fieldName="ProjectID" label="Project Id" />
+    <column name="ProjectName" fieldName="ProjectName" label="Project Name" />
+    <column name="PrefixNumber" fieldName="PrefixNumber" label="Prefix Number" />
+  </columns>
+</dataModel>

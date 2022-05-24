@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="DefectDescription" conflictDetection="overwriteChanges" label="Defect Description" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"DefectDescription"."DefectDescriptionID" "DefectDescriptionID"
+	,"DefectDescription"."CategoryId" "CategoryID"
+	,"Category"."Category" "Category"
+	,"DefectDescription"."ProjectId" "ProjectId"
+	,"DefectDescription"."NoRujukan" "NoRujukan"
+	,"Project"."ProjectName" "ProjectName"
+	,"Project"."PrefixNumber" "ProjectPrefixNumber"
+	,"Category"."PrefixNumber" "CategoryPrefixNumber"
+	,"DefectDescription"."Description" "Description"
+	,"DefectDescription"."RootCause" "RootCause"
+	,"DefectDescription"."ProposeCorrection" "ProposeCorrection"
+	,"DefectDescription"."ProposePrevention" "ProposePrevention"
+	,"DefectDescription"."DurationTaken" "DurationTaken"
+	,"DefectDescription"."CostTarget" "CostTarget"
+	,"DefectDescription"."DurationType" "DurationType"
+	,"DefectDescription"."SectionId" "SectionID"
+	,"Section"."Section" "Section"
+	,"DefectDescription"."BuildingId" "BuildingID"
+	,"Building"."Building" "Building"
+	,"DefectDescription"."LocationId" "LocationID"
+	,"Location"."City" "LocationCity"
+	,"Location"."State" "LocationState"
+	,"Location"."Name" "LocationName"
+	,"DefectDescription"."AuditorId" "AuditorID"
+	,"Auditor"."Name" "AuditorName"
+	,"DefectDescription"."LevelId" "LevelId"
+	,"Level"."Level" "Level"
+	,"DefectDescription"."MarkahFizikal" "MarkahFizikal"
+	,"DefectDescription"."MarkahKeutamaan" "MarkahKeutamaan"
+	,"DefectDescription"."SkalaKecacatan" "SkalaKecacatan"
+	,"DefectDescription"."KeadaanFizikal" "KeadaanFizikal"
+	,"DefectDescription"."NilaiKecacatan" "NilaiKecacatan"
+	,"DefectDescription"."DefectLv" "DefectLv"
+	,"DefectDescription"."Status" "Status"
+	,"DefectDescription"."Createdby" "Createdby"
+	,"DefectDescription"."ModifiedBy" "ModifiedBy"
+	,"DefectDescription"."CreatedOn" "CreatedOn"
+	,"DefectDescription"."ModifiedOn" "ModifiedOn"
+	,"DefectDescription"."image1" "Image1"
+	,"DefectDescription"."RemarkImage1" "RemarkImage1"
+	,"DefectDescription"."image1FileName" "Image1FileName"
+	,"DefectDescription"."image2" "Image2"
+	,"DefectDescription"."image2FileName" "Image2FileName"
+	,"DefectDescription"."RemarkImage2" "RemarkImage2"
+	,"DefectDescription"."image3" "Image3"
+	,"DefectDescription"."image3FileName" "Image3FileName"
+	,"DefectDescription"."RemarkImage3" "RemarkImage3"
+	,"DefectDescription"."image1After" "Image1After"
+	,"DefectDescription"."image1FileNameAfter" "Image1FileNameAfter"
+	,"DefectDescription"."RemarkImage1After" "RemarkImage1After"
+	,"DefectDescription"."image2After" "Image2After"
+	,"DefectDescription"."image2FileNameAfter" "Image2FileNameAfter"
+	,"DefectDescription"."RemarkImage2After" "RemarkImage2After"
+	,"DefectDescription"."image3After" "Image3After"
+	,"DefectDescription"."image3FileNameAfter" "Image3FileNameAfter"
+	,"DefectDescription"."RemarkImage3After" "RemarkImage3After"
+from "dbo"."DefectDescription" "DefectDescription"
+	left join "dbo"."Section" "Section" on "DefectDescription"."SectionId" = "Section"."SectionId"
+	left join "dbo"."Building" "Building" on "DefectDescription"."BuildingId" = "Building"."BuildingId"
+	left join "dbo"."Location" "Location" on "DefectDescription"."LocationId" = "Location"."LocationId"
+	left join "dbo"."Auditor" "Auditor" on "DefectDescription"."AuditorId" = "Auditor"."AuditorId"
+	left join "dbo"."Level" "Level" on "DefectDescription"."LevelId" = "Level"."levelId"
+	left join "dbo"."Categories" "Category" on "DefectDescription"."CategoryId" = "Category"."CategoryId"
+	left join "dbo"."Project" "Project" on "DefectDescription"."ProjectId" = "Project"."ProjectId"
+]]></text>
+    </command>
+    <command id="DefectDescriptionIDIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="DefectDescriptionID" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="DefectDescriptionID" type="Int32" allowNulls="false" isPrimaryKey="true" label="Defect Description ID" readOnly="true" />
+    <field name="CategoryID" type="Int32" label="Category Id" showInSummary="true">
+      <items style="Lookup" dataController="Categories" newDataView="createForm1" dataValueField="CategoryID" dataTextField="Category" copy="CategoryPrefixNumber=PrefixNumber" />
+    </field>
+    <field name="Category" type="String" readOnly="true" label="Category" length="50" />
+    <field name="CategoryPrefixNumber" type="Int32" readOnly="true" label="Category Prefix Number" />
+    <field name="ProjectId" type="Int32" label="Project Id" showInSummary="true">
+      <items style="Lookup" dataController="Project" newDataView="createForm1" dataValueField="ProjectID" dataTextField="ProjectName" copy="ProjectPrefixNumber=PrefixNumber" />
+    </field>
+    <field name="ProjectPrefixNumber" type="Int32" readOnly="true" label="Project Prefix Number" />
+    <field name="NoRujukan" type="String" label="No Rujukan" length="50" showInSummary="true" />
+    <field name="ProjectName" type="String" readOnly="true" label="Project Name" length="350" />
+    <field name="Description" type="String" label="Description" length="250" showInSummary="true" />
+    <field name="RootCause" type="String" label="Root Cause" length="350" showInSummary="true" />
+    <field name="ProposeCorrection" type="String" label="Propose Correction" length="250" />
+    <field name="ProposePrevention" type="String" label="Propose Prevention" length="250" />
+    <field name="DurationTaken" type="Int32" label="Duration Taken" />
+    <field name="CostTarget" type="Single" dataFormatString="c" label="Cost Target" />
+    <field name="DurationType" type="String" label="Duration Type" length="50">
+      <items style="DropDownList">
+        <item value="Hours" text="Hours" />
+        <item value="Day" text="Day" />
+        <item value="Week" text="Week" />
+        <item value="Month" text="Month" />
+      </items>
+    </field>
+    <field name="SectionID" type="Int32" label="Section Id">
+      <items style="Lookup" dataController="Section" newDataView="createForm1" dataValueField="SectionID" dataTextField="Section" />
+    </field>
+    <field name="Section" type="String" readOnly="true" label="Section" length="50" />
+    <field name="BuildingID" type="Int32" label="Building Id">
+      <items style="Lookup" dataController="Building" newDataView="createForm1" dataValueField="BuildingID" dataTextField="Building" />
+    </field>
+    <field name="Building" type="String" readOnly="true" label="Building" length="50" />
+    <field name="LocationID" type="Int32" label="Location Id">
+      <items style="Lookup" dataController="Location" newDataView="createForm1" dataValueField="LocationID" dataTextField="City" copy="LocationState=State, LocationName=Name" />
+    </field>
+    <field name="LocationCity" type="String" readOnly="true" label="Location City" length="50" />
+    <field name="LocationState" type="String" readOnly="true" label="Location State" length="50" />
+    <field name="LocationName" type="String" readOnly="true" label="Location Name" length="50" />
+    <field name="AuditorID" type="Int32" label="Auditor Id">
+      <items style="Lookup" dataController="Auditor" newDataView="createForm1" dataValueField="AuditorID" dataTextField="Name" />
+    </field>
+    <field name="AuditorName" type="String" readOnly="true" label="Auditor Name" length="50" />
+    <field name="LevelId" type="Int32" label="Level Id">
+      <items style="Lookup" dataController="Level" newDataView="createForm1" dataValueField="LevelID" dataTextField="Level" />
+    </field>
+    <field name="Level" type="String" readOnly="true" label="Level" length="50" />
+    <field name="MarkahFizikal" type="String" label="Markah Fizikal" length="50">
+      <items style="RadioButtonList">
+        <item value="1" text="1" />
+        <item value="2" text="2" />
+        <item value="3" text="3" />
+        <item value="4" text="4" />
+        <item value="5" text="5" />
+      </items>
+    </field>
+    <field name="MarkahKeutamaan" type="String" label="Markah Keutamaan" length="50">
+      <items style="RadioButtonList">
+        <item value="1" text="1" />
+        <item value="2" text="2" />
+        <item value="3" text="3" />
+        <item value="4" text="4" />
+        <item value="5" text="5" />
+      </items>
+    </field>
+    <field name="SkalaKecacatan" type="String" label="Skala Kecacatan" length="50">
+      <items style="ListBox">
+        <item value="1/10" text="1/10" />
+        <item value="2/10" text="2/10" />
+        <item value="3/10" text="3/10" />
+        <item value="4/10" text="4/10" />
+        <item value="5/10" text="5/10" />
+        <item value="6/10" text="6/10" />
+        <item value="7/10" text="7/10" />
+        <item value="8/10" text="8/10" />
+        <item value="9/10" text="9/10" />
+        <item value="10/10" text="10/10" />
+      </items>
+    </field>
+    <field name="KeadaanFizikal" type="String" label="Keadaan Fizikal" length="50" />
+    <field name="NilaiKecacatan" type="String" label="Nilai Kecacatan" length="50" />
+    <field name="DefectLv" type="String" label="Defect Lv" length="50">
+      <items style="DropDownList">
+        <item value="Normal" text="Normal" />
+        <item value="Moderate" text="Moderate" />
+        <item value="Urgent" text="Urgent" />
+        <item value="TopUrgent" text="Top Urgent!" />
+      </items>
+    </field>
+    <field name="Status" type="String" allowNulls="false" label="Status" length="50">
+      <items style="DropDownList">
+        <item value="Pending" text="Pending" />
+        <item value="Approved" text="Approved" />
+        <item value="Completed" text="Completed" />
+      </items>
+    </field>
+    <field name="Createdby" type="String" label="Createdby" length="50" />
+    <field name="ModifiedBy" type="String" label="Modified By" length="50" />
+    <field name="CreatedOn" type="DateTime" dataFormatString="g" label="Created On" />
+    <field name="ModifiedOn" type="DateTime" dataFormatString="g" label="Modified On" />
+    <field name="Image1" type="Byte[]" onDemand="true" sourceFields="DefectDescriptionID" onDemandHandler="DefectDescriptionImage1" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Image 1" />
+    <field name="RemarkImage1" type="String" label="Remark Image 1" length="250" />
+    <field name="Image1FileName" type="String" label="Image 1 File Name" length="50" />
+    <field name="Image2" type="Byte[]" onDemand="true" sourceFields="DefectDescriptionID" onDemandHandler="DefectDescriptionImage2" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Image 2" />
+    <field name="Image2FileName" type="String" label="Image 2 File Name" length="50" />
+    <field name="RemarkImage2" type="String" label="Remark Image 2" length="250" />
+    <field name="Image3" type="Byte[]" onDemand="true" sourceFields="DefectDescriptionID" onDemandHandler="DefectDescriptionImage3" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Image 3" />
+    <field name="Image3FileName" type="String" label="Image 3 File Name" length="50" />
+    <field name="RemarkImage3" type="String" label="Remark Image 3" length="250" />
+    <field name="Image1After" type="Byte[]" onDemand="true" sourceFields="DefectDescriptionID" onDemandHandler="DefectDescriptionImage1After" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Image 1 After" />
+    <field name="Image1FileNameAfter" type="String" label="Image 1 File Name After" length="50" />
+    <field name="RemarkImage1After" type="String" label="Remark Image 1 After" length="250" />
+    <field name="Image2After" type="Byte[]" onDemand="true" sourceFields="DefectDescriptionID" onDemandHandler="DefectDescriptionImage2After" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Image 2 After" />
+    <field name="Image2FileNameAfter" type="String" label="Image 2 File Name After" length="50" />
+    <field name="RemarkImage2After" type="String" label="Remark Image 2 After" length="250" />
+    <field name="Image3After" type="Byte[]" onDemand="true" sourceFields="DefectDescriptionID" onDemandHandler="DefectDescriptionImage3After" onDemandStyle="Thumbnail" allowQBE="false" allowSorting="false" label="Image 3 After" />
+    <field name="Image3FileNameAfter" type="String" label="Image 3 File Name After" length="50" />
+    <field name="RemarkImage3After" type="String" label="Remark Image 3 After" length="250" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Defect Description" tags="modal-max-xl">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="ProjectId" aliasFieldName="ProjectName" />
+        <dataField fieldName="ProjectPrefixNumber" columns="15" hidden="true" />
+        <dataField fieldName="NoRujukan" columns="50" />
+        <dataField fieldName="CategoryPrefixNumber" columns="15" hidden="true" />
+        <dataField fieldName="AuditorID" aliasFieldName="AuditorName" />
+        <dataField fieldName="CategoryID" aliasFieldName="Category" />
+        <dataField fieldName="Description" />
+        <dataField fieldName="RootCause" />
+        <dataField fieldName="ProposeCorrection" />
+        <dataField fieldName="ProposePrevention" />
+        <dataField fieldName="DurationTaken" columns="15" hidden="true" />
+        <dataField fieldName="DurationType" columns="50" hidden="true" />
+        <dataField fieldName="CostTarget" columns="15" />
+        <dataField fieldName="LocationID" aliasFieldName="LocationCity" />
+        <dataField fieldName="LocationName" columns="50" />
+        <dataField fieldName="LocationState" columns="50" />
+        <dataField fieldName="SectionID" aliasFieldName="Section" hidden="true" />
+        <dataField fieldName="BuildingID" aliasFieldName="Building" hidden="true" />
+        <dataField fieldName="LevelId" aliasFieldName="Level" hidden="true" />
+        <dataField fieldName="MarkahFizikal" columns="50" hidden="true" />
+        <dataField fieldName="MarkahKeutamaan" columns="50" hidden="true" />
+        <dataField fieldName="SkalaKecacatan" columns="50" hidden="true" />
+        <dataField fieldName="KeadaanFizikal" columns="50" hidden="true" />
+        <dataField fieldName="NilaiKecacatan" columns="50" hidden="true" />
+        <dataField fieldName="DefectLv" columns="50" />
+        <dataField fieldName="Status" columns="50" hidden="true" />
+        <dataField fieldName="Image1FileName" columns="50" hidden="true" />
+        <dataField fieldName="Image1" columns="15" />
+        <dataField fieldName="Image2FileName" columns="50" hidden="true" />
+        <dataField fieldName="RemarkImage1" hidden="true" />
+        <dataField fieldName="Image2" columns="15" hidden="true" />
+        <dataField fieldName="Image3FileName" columns="50" hidden="true" />
+        <dataField fieldName="RemarkImage2" hidden="true" />
+        <dataField fieldName="Image3" columns="15" hidden="true" />
+        <dataField fieldName="RemarkImage3" />
+        <dataField fieldName="Image1After" columns="15" hidden="true" />
+        <dataField fieldName="Image1FileNameAfter" columns="50" hidden="true" />
+        <dataField fieldName="RemarkImage1After" hidden="true" />
+        <dataField fieldName="Image2After" columns="15" hidden="true" />
+        <dataField fieldName="Image2FileNameAfter" columns="50" hidden="true" />
+        <dataField fieldName="RemarkImage2After" hidden="true" />
+        <dataField fieldName="Image3After" columns="15" hidden="true" />
+        <dataField fieldName="Image3FileNameAfter" columns="50" hidden="true" />
+        <dataField fieldName="RemarkImage3After" hidden="true" />
+        <dataField fieldName="Createdby" columns="50" hidden="true" />
+        <dataField fieldName="ModifiedBy" columns="50" hidden="true" />
+        <dataField fieldName="CreatedOn" columns="20">
+          <headerText>Date Created</headerText>
+        </dataField>
+        <dataField fieldName="ModifiedOn" columns="20" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Defect Description" tags="modal-max-xl">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Defect Description" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="CategoryID" aliasFieldName="Category" />
+            <dataField fieldName="ProjectId" aliasFieldName="ProjectName" />
+            <dataField fieldName="NoRujukan" columns="50" />
+            <dataField fieldName="ProjectPrefixNumber" columns="15" />
+            <dataField fieldName="CategoryPrefixNumber" columns="15" />
+            <dataField fieldName="Description" rows="5" />
+            <dataField fieldName="RootCause" rows="2" />
+            <dataField fieldName="ProposeCorrection" />
+            <dataField fieldName="ProposePrevention" />
+            <dataField fieldName="DurationTaken" columns="15" />
+            <dataField fieldName="DurationType" columns="50" />
+            <dataField fieldName="AuditorID" aliasFieldName="AuditorName" />
+            <dataField fieldName="MarkahFizikal" columns="50" />
+            <dataField fieldName="MarkahKeutamaan" columns="50" />
+            <dataField fieldName="SkalaKecacatan" columns="50" />
+            <dataField fieldName="KeadaanFizikal" columns="50" />
+            <dataField fieldName="NilaiKecacatan" columns="50" />
+          </dataFields>
+        </category>
+        <category headerText="Image Defect" id="c4">
+          <dataFields>
+            <dataField fieldName="Image1" columns="15" />
+            <dataField fieldName="RemarkImage1" />
+            <dataField fieldName="Image2" columns="15" />
+            <dataField fieldName="RemarkImage2" />
+            <dataField fieldName="Image3" columns="15" />
+            <dataField fieldName="RemarkImage3" />
+          </dataFields>
+        </category>
+        <category headerText="Defect Area" id="c2">
+          <dataFields>
+            <dataField fieldName="LocationID" aliasFieldName="LocationCity" />
+            <dataField fieldName="LocationName" columns="50" />
+            <dataField fieldName="LocationState" columns="50" />
+            <dataField fieldName="BuildingID" aliasFieldName="Building" />
+            <dataField fieldName="LevelId" aliasFieldName="Level" />
+            <dataField fieldName="SectionID" aliasFieldName="Section" />
+            <dataField fieldName="DefectLv" columns="50" />
+            <dataField fieldName="CostTarget" />
+          </dataFields>
+        </category>
+        <category headerText="Image After" id="c5" collapsed="true">
+          <dataFields>
+            <dataField fieldName="Image1After" columns="15" />
+            <dataField fieldName="RemarkImage1After" />
+            <dataField fieldName="Image2After" columns="15" />
+            <dataField fieldName="RemarkImage2After" />
+            <dataField fieldName="Image3After" columns="15" />
+            <dataField fieldName="RemarkImage3After" />
+          </dataFields>
+        </category>
+        <category headerText="Admin" id="c3" collapsed="true">
+          <dataFields>
+            <dataField fieldName="Status" columns="50" />
+            <dataField fieldName="Createdby" columns="50" />
+            <dataField fieldName="ModifiedBy" columns="50" />
+            <dataField fieldName="CreatedOn" columns="20" />
+            <dataField fieldName="ModifiedOn" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Defect Description" tags="modal-max-xl">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="CategoryID" aliasFieldName="Category" />
+            <dataField fieldName="ProjectId" aliasFieldName="ProjectName" />
+            <dataField fieldName="NoRujukan" columns="50" hidden="true" />
+            <dataField fieldName="ProjectPrefixNumber" columns="15" hidden="true" />
+            <dataField fieldName="CategoryPrefixNumber" columns="15" hidden="true" />
+            <dataField fieldName="Description" />
+            <dataField fieldName="RootCause" />
+            <dataField fieldName="ProposeCorrection" />
+            <dataField fieldName="ProposePrevention" />
+            <dataField fieldName="DurationTaken" columns="15" watermark="Insert Number here" />
+            <dataField fieldName="DurationType" columns="50" />
+            <dataField fieldName="AuditorID" aliasFieldName="AuditorName" />
+            <dataField fieldName="MarkahFizikal" columns="50" watermark="1-Baik | 5-Tidak Baik" />
+            <dataField fieldName="MarkahKeutamaan" columns="50" />
+            <dataField fieldName="SkalaKecacatan" columns="50" />
+            <dataField fieldName="KeadaanFizikal" columns="50" />
+            <dataField fieldName="NilaiKecacatan" columns="50" />
+            <dataField fieldName="Status" columns="50" />
+          </dataFields>
+        </category>
+        <category headerText="Image" id="c4">
+          <dataFields>
+            <dataField fieldName="Image1FileName" columns="50" />
+            <dataField fieldName="Image1" columns="15" />
+            <dataField fieldName="RemarkImage1" />
+            <dataField fieldName="Image2FileName" columns="50" />
+            <dataField fieldName="Image2" columns="15" />
+            <dataField fieldName="RemarkImage2" />
+            <dataField fieldName="Image3FileName" columns="50" />
+            <dataField fieldName="Image3" columns="15" />
+            <dataField fieldName="RemarkImage3" />
+          </dataFields>
+        </category>
+        <category headerText="Defect Area" id="c2">
+          <dataFields>
+            <dataField fieldName="LocationID" aliasFieldName="LocationCity" />
+            <dataField fieldName="LocationName" columns="50" />
+            <dataField fieldName="LocationState" columns="50" />
+            <dataField fieldName="BuildingID" aliasFieldName="Building" />
+            <dataField fieldName="LevelId" aliasFieldName="Level" />
+            <dataField fieldName="SectionID" aliasFieldName="Section" />
+            <dataField fieldName="DefectLv" columns="50" />
+            <dataField fieldName="CostTarget" columns="15" />
+          </dataFields>
+        </category>
+        <category headerText="Admin" id="c3" collapsed="true">
+          <dataFields>
+            <dataField fieldName="Createdby" columns="50" />
+            <dataField fieldName="ModifiedBy" columns="50" />
+            <dataField fieldName="CreatedOn" columns="20" />
+            <dataField fieldName="ModifiedOn" columns="20" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" commandArgument="Save" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" commandArgument="Save" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" commandArgument="SaveAndNew" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenLastCommandArgument="Save" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenClientScript="this.hasDetails()" />
+      <action id="a14" whenLastCommandName="Insert" whenLastCommandArgument="SaveAndNew" commandName="New" commandArgument="createForm1" />
+      <action commandName="ReportAsPdf" headerText="Laporan" id="a100" whenLastCommandName="Select" whenKeySelected="true">
+        <data><![CDATA[_controller=LaporanAudit
+_view=editForm1
+_sortExpression=DefectDescriptionID
+DefectDescriptionID=DefectDescriptionID
+]]></data>
+      </action>
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="New" type="Sql" phase="Execute"><![CDATA[set @Status = 'Pending'
+if @CategoryPrefixNumber <> 0 and @ProjectPrefixNumber <> 0
+	set @NoRujukan = @CategoryPrefixNumber + '-' + @ProjectPrefixNumber]]></rule>
+    <rule id="r101" commandName="Update" type="Sql" phase="Execute"><![CDATA[if @CategoryPrefixNumber <> 0 and @ProjectPrefixNumber <> 0
+	set @NoRujukan = (select 'Audit' + '-' + Cast(@ProjectPrefixNumber as varchar ) 
+					  + Cast(@CategoryPrefixNumber as varchar ) )]]></rule>
+    <rule id="r102" commandName="Insert" type="Sql" phase="Before"><![CDATA[if @CategoryPrefixNumber <> 0 and @ProjectPrefixNumber <> 0
+	set @NoRujukan = (select 'Audit' + '-' + Cast(@ProjectPrefixNumber as varchar ) 
+					  + Cast(@CategoryPrefixNumber as varchar ) )
+
+update Categories
+set PrefixNumber +=1
+where Category = @Category
+]]></rule>
+  </businessRules>
+</dataController>

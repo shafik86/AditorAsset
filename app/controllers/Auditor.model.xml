@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel baseSchema="dbo" baseTable="Auditor" alias="Auditor" created="2022-05-13T11:26:05" modified="2022-05-24T16:17:00" x="20" y="20" xmlns="urn:schemas-codeontime-com:data-model">
+  <foreignKeys />
+  <columns>
+    <column name="AuditorId" fieldName="AuditorID" label="Auditor Id" />
+    <column name="Name" fieldName="Name" label="Name" />
+    <column name="UserName" fieldName="UserName" label="User Name" />
+    <column name="Email" fieldName="Email" label="Email" />
+    <column name="Phone" fieldName="Phone" label="Phone" />
+    <column name="Image" fieldName="Image" label="Image" />
+    <column name="IsLocked" fieldName="IsLocked" label="Is Locked" />
+    <column name="CreatedOn" fieldName="CreatedOn" label="Created On" format="g" />
+    <column name="CreatedBy" fieldName="CreatedBy" label="Created By" />
+    <column name="ModifiedOn" fieldName="ModifiedOn" label="Modified On" format="g" />
+    <column name="ModifiedBy" fieldName="ModifiedBy" label="Modified By" />
+    <column name="ImageContentType" fieldName="ImageContentType" label="Image Content Type" />
+    <column name="imageFileName" fieldName="ImageFileName" label="Image File Name" />
+  </columns>
+</dataModel>
